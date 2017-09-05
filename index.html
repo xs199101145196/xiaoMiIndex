@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>小米首页</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./img/favicon.ico" class="ico" />
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="./js/less.js"></script>
+    <link rel="stylesheet" href="./css/swiper.min.css">
+    <link rel="stylesheet" href="./lib/Font-Awesome-3/Font-Awesome-3.2.1/css/font-awesome.min.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <!-- 顶部通栏 的开始 -->
+    <div class="header">
+        <div class="topbar w">
+            <ul>
+                <li><a href="#">小米商城</a></li>
+                <li><a href="#">|</a></li>
+                <li><a href="#">MIUI</a></li>
+                <li><a href="#">|</a></li>
+                <li><a href="#">米聊</a></li>
+                <li><a href="#">|</a></li>
+                <li><a href="#">游戏</a></li>
+                <li><a href="#">|</a></li>
+                <li><a href="#">多看阅读</a></li>
+                <li><a href="#">|</a></li>
+                <li><a href="#">云服务</a></li>
+                <li><a href="#">|</a></li>
+                <li><a href="#">小米网移动版</a></li>
+                <li><a href="#">|</a></li>
+                <li><a href="#">问题反馈</a></li>
+                <li><a href="#">|</a></li>
+                <li><a href="#">Select Region</a></li>
+            </ul>
+            <div class="login">
+                <a href="#">登录</a>
+                <span>|</span>
+                <a href="#">注册</a>
+            </div>
+            <div class="buycar">
+                <span class="icon-shopping-cart">&nbsp;&nbsp;购物车(0)</span>
+                <div class="buy_car">
+                    <span>购物车中还没有商品，赶快选购吧！</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 顶部通栏 的结束 -->
+
+    <!-- 顶部导航 的开始 -->
+    <div class="navbar w">
+        <div class="logo">
+            <a href="#" class="logo_01"></a>
+            <a href="#" class="logo_02"></a>
+        </div>
+        <div class="nav_list" id="nav_list">
+            <ul>
+                <!-- <li><a href="#">小米手机</a></li>
+                <li><a href="#">红米</a></li>
+                <li><a href="#">平板 · 笔记本</a></li>
+                <li><a href="#">电视</a></li>
+                <li><a href="#">盒子 · 影音</a></li>
+                <li><a href="#">路由器</a></li>
+                <li><a href="#">智能硬件</a></li>
+                <li><a href="#">服务</a></li> -->
+                <script id="tp1" type="text/html">
+                    {{each items}}
+                    <li type="{{$value.type}}"><a href="#">{{$value.name}}</a></li>
+                    {{/each}}
+                </script>
+
+            </ul>
+        </div>
+        <div class="search">
+            <input type="text" class="inp_text">
+            <a href="#" class="txt_01"> 红米pro </a>
+            <a href="#" class="txt_02"> 小米笔记本air </a>
+            <a href="#" class="icon-search"></a>
+            <ul>
+                <li>小米5<span>约有11件</span></li>
+                <li>空气净化器2<span>约有11件</span></li>
+                <li>活塞耳机<span>约有11件</span></li>
+                <li>小米路由器<span>约有11件</span></li>
+                <li>移动电源<span>约有11件</span></li>
+                <li>运动相机<span>约有11件</span></li>
+                <li>小米摄像机<span>约有11件</span></li>
+                <li>小米体重秤<span>约有11件</span></li>
+                <li>小米插线板<span>约有11件</span></li>
+                <li>配件优惠套装<span>约有11件</span></li>
+            </ul>
+        </div>
+    </div>
+    <!-- 隐藏部分 开始 -->
+    <ul class="nav_tab">
+        <script type="text/html" id="tp2">
+            {{each items}}
+            <li>
+                <img src="{{$value.imgUrl}}" alt="">
+                <a href="{{$value.sourcePath}}">{{$value.name}}</a>
+                <span>{{$value.price}}</span>
+            </li>
+            {{/each}}
+        </script>
+    </ul>
+    <!-- 隐藏部分 结束 -->
+
+    <!-- 顶部导航 的结束 -->
+
+    <!-- 轮播图部分 的开始-->
+    <div class="bannerWrap w">
+        <ul class="banner">
+            <script type="text/html" id="tempBanner">
+                {{each datas}}
+                <li><a href="{{$value.sourceUrl}}"><img src="{{$value.imgUrl}}" alt=""></a></li>
+                {{/each}}
+            </script>
+        </ul>
+        <span class="pre">&lt;</span>
+        <span class="next">&gt;</span>
+        <div class="menu">
+            <ul class="menuItems">
+                <script type="text/html" id="tempMenu">
+                    {{each datas}}
+                    <li data-type="{{$value.type}}">{{$value.content}}<span>&gt;</span></li>
+                    {{/each}}
+                </script>
+            </ul>
+        </div>
+        <div class="menuDetail clearfix">
+
+        </div>
+    </div>
+    <!-- 轮播图部分 的结束 -->
+
+    <!-- 展示区域 的开始 -->
+    <div class="exhibition w clearfix">
+        <div class="sprite">
+            <ul>
+                <li>
+                    <a href="#">
+                        <i class="icon-mobile-phone"></i>
+                        <p>选购手机</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="icon-gift"></i>
+                        <p>企业团购</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="icon-refresh"></i>
+                        <p>官方产品</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="icon-credit-card"></i>
+                        <p>小米移动</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="icon-retweet"></i>
+                        <p>以旧换新</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="icon-credit-card"></i>
+                        <p>话费充值</p>
+                    </a>
+                </li>
+            </ul>
+            <b class="line01"></b>
+            <b class="line02"></b>
+            <b class="line03"></b>
+            <b class="line04"></b>
+            <b class="line05"></b>
+            <b class="line06"></b>
+            <b class="line07"></b>
+        </div>
+        <ul>
+            <li>
+                <a href="#"><img src="./img/zs_01.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="#"><img src="./img/zs_02.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="#"><img src="./img/zs_03.jpg" alt=""></a>
+            </li>
+        </ul>
+    </div>
+    <!-- 展示区域 的结束 -->
+
+    <!-- 主体容器 的开始 -->
+    <div class="container" id="container ">
+        <!-- 智能硬件 的开始 -->
+        <div class="noopsyche w">
+            <div class="noopsyche_top">
+                <span>智能硬件</span>
+                <a href="#">查看全部&nbsp;&nbsp;<i class="icon-circle-arrow-right"></i></a>
+            </div>
+            <div class="noopsyche_content">
+                <div class="content_left">
+                    <img src="./img/noopsyche_01.jpg" alt="">
+                </div>
+                <ul>
+                    <script type="text/html" id="tp5">
+                        {{each items}}
+                        <li>
+                            <a href="{{$value.sourceUrl}}">
+                                <span class="{{$value.discountType}}">{{$value.discount}}</span>
+                                <img src="{{$value.imgUrl}}" alt="">
+                                <h4>{{$value.title}}</h4>                        
+                            </a>
+                            <p class="desc">{{$value.desc}}</p>
+                            <p class="price">{{$value.price}}元</p>
+                        </li>
+                        {{/each}}
+                    </script>
+                </ul>
+            </div>
+        </div>
+        <!-- 智能硬件 的结束 -->
+
+        <!-- 搭配区域 的开始 -->
+        <div class="match w">
+            <div class="match_top">
+                <span class="match_txt01">搭配</span>
+                <ul>
+                    <script type="text/html" id="tp6">
+                        {{each items}}
+                        <li>{{$value.name}}</li>
+                        {{/each}}
+                    </script>
+                </ul>
+            </div>
+            <div class="match_content">
+                <ul class="match_left_list">
+                    <script type="text/html" id="tp7">
+                        {{each items}}
+                        <li>
+                            <a href="{{$value.sourceUrl}}">
+                                <img src="{{$value.imgUrl}}" alt="">
+                            </a>
+                        </li>
+                        {{/each}}
+                    </script>
+                </ul>
+                <ul class="match_right_list">
+                    <script type="text/html" id="tp8">
+                        {{each items}}
+                        <li toptitle="{{$value.toptitle}}">
+                            <i><img src="{{$value.imgUrl}}" alt=""></i>
+                            <span class="match_txt02">{{$value.title}}</span>
+                            <span class="match_txt03">{{$value.price}}元</span>
+                            <p>{{$value.heat}}</p>
+                        </li>
+                        {{/each}}
+                    </script>
+                </ul>
+                <div class="match_more">
+                    <i class="icon-circle-arrow-right"></i>
+                    <a href="#" class="match_txt04">浏览更多</a>
+                    <span class="match_txt05">热门</span>
+                </div>
+            </div>
+        </div>
+        <!-- 搭配区域 的结束 -->
+        <!-- 配件区域 的开始 -->
+        <div class="mountings w" id="mountings">
+            <div class="mountings_top">
+                <span class="mountings_txt01">配件</span>
+                <ul>
+                    <script type="text/html" id="tp9">
+                        {{each items}}
+                        <li>{{$value.name}}</li>
+                        {{/each}}
+                    </script>
+                </ul>
+            </div>
+            <div class="mountings_content">
+                <ul class="mountings_left_list">
+                    <script type="text/html" id="tp10">
+                        {{each items}}
+                        <li>
+                            <a href="{{$value.sourceUrl}}">
+                                    <img src="{{$value.imgUrl}}" alt="">
+                                </a>
+                        </li>
+                        {{/each}}
+                    </script>
+                </ul>
+                <ul class="mountings_right_list">
+                    <script type="text/html" id="tp11">
+                        {{each items}}
+                        <li toptitle="{{$value.toptitle}}">
+                            <i><img src="{{$value.imgUrl}}" alt=""></i>
+                            <span class="mountings_txt02">{{$value.title}}</span>
+                            <span class="mountings_txt03">{{$value.price}}元</span>
+                            <p>{{$value.heat}}</p>
+                        </li>
+                        {{/each}}
+                    </script>
+                </ul>
+                <div class="mountings_more">
+                    <i class="icon-circle-arrow-right"></i>
+                    <a href="#" class="mountings_txt04">浏览更多</a>
+                    <span class="mountings_txt05">热门</span>
+                </div>
+            </div>
+        </div>
+        <!-- 配件区域 的结束 -->
+
+        <!-- 周边区域 的开始 -->
+        <div class="circum w" id="circum">
+            <div class="circum_top">
+                <span class="circum_txt01">周边</span>
+                <ul>
+                    <script type="text/html" id="tp12">
+                        {{each items}}
+                        <li>{{$value.name}}</li>
+                        {{/each}}
+                    </script>
+                </ul>
+            </div>
+            <div class="circum_content">
+                <ul class="circum_left_list">
+                    <script type="text/html" id="tp13">
+                        {{each items}}
+                        <li>
+                            <a href="{{$value.sourceUrl}}">
+                                    <img src="{{$value.imgUrl}}" alt="">
+                                </a>
+                        </li>
+                        {{/each}}
+                    </script>
+                </ul>
+                <ul class="circum_right_list">
+                    <script type="text/html" id="tp14">
+                        {{each items}}
+                        <li toptitle="{{$value.toptitle}}">
+                            <i><img src="{{$value.imgUrl}}" alt=""></i>
+                            <span class="circum_txt02">{{$value.title}}</span>
+                            <span class="circum_txt03">{{$value.price}}元</span>
+                            <p>{{$value.heat}}人评价</p>
+                        </li>
+                        {{/each}}
+                    </script>
+                </ul>
+                <div class="circum_more">
+                    <i class="icon-circle-arrow-right"></i>
+                    <a href="#" class="circum_txt04">浏览更多</a>
+                    <span class="circum_txt05">热门</span>
+                </div>
+            </div>
+        </div>
+        <!-- 周边区域 的结束 -->
+
+        <!-- 推荐区域 的开始 -->
+        <div class="recommend w" id="recommend">
+            <div class="recommend_top">
+                <span class="recommend_txt01">为你推荐</span>
+                <ul>
+                    <li>&lt;</li>
+                    <li>&gt;</li>
+                </ul>
+            </div>
+            <div class="recommend_content">
+                <ul class="recommend_list">
+                    <script type="text/html" id="tp15">
+                        {{each items}}
+                        <li toptitle="{{$value.id}}">
+                            <i><img src="{{$value.imgUrl}}" alt=""></i>
+                            <span class="recommend_txt02">{{$value.name}}</span>
+                            <span class="recommend_txt03">{{$value.price}}元</span>
+                            <p>{{$value.favorable}}人评价</p>
+                        </li>
+                        {{/each}}
+                    </script>
+                </ul>
+            </div>
+        </div>
+        <!-- 推荐区域 的结束 -->
+
+        <!-- 热评区域 的开始 -->
+        <div class="comment w" id="comment">
+            <div class="comment_top">
+                <span class="comment_txt01">热评产品</span>
+            </div>
+            <div class="comment_content">
+                <ul class="comment_list">
+                    <script type="text/html" id="tp16">
+                        {{each items}}
+                        <li>
+                            <i><img src="{{$value.imageUrl}}" alt=""></i>
+                            <span class="comment_txt02">{{$value.review}}</span>
+                            <span class="comment_txt04">{{$value.author}}的评价</span>
+                            <ul class="comment_txt03">
+                                <li><a href="">{{$value.name}}</a></li>
+                                <li class="comment_txt06">|</li>
+                                <li class="comment_txt05">{{$value.price}}元</li>
+                            </ul>
+                        </li>
+                        {{/each}}
+                    </script>
+                </ul>
+            </div>
+        </div>
+        <!-- 热评区域 的结束 -->
+
+        <!-- 内容区域 的开始 -->
+        <div class="content w" id="content">
+            <div class="content_top">
+                <span class="content_txt01">内容</span>
+            </div>
+            <div class="content_content">
+                <ul class="content_list">
+                    <li>
+                        <span class="content_txt01">图书</span>
+                        <div class="swiper-container content_swiper_container">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <h3 class="content_txt02">哈利·波特与魔法石</h3>
+                                    <p class="content_txt03">哈利波特来了</p>
+                                    <i class="content_txt04"><img src="./img/hlbt_01.jpg" alt=""></i>
+                                </div>
+                                <div class="swiper-slide">
+                                    <h3 class="content_txt02">哈利·波特与魔法石</h3>
+                                    <p class="content_txt03">哈利波特来了</p>
+                                    <i class="content_txt04"><img src="./img/hlbt_01.jpg" alt=""></i>
+                                </div>
+                                <div class="swiper-slide">
+                                    <h3 class="content_txt02">哈利·波特与魔法石</h3>
+                                    <p class="content_txt03">哈利波特来了</p>
+                                    <i class="content_txt04"><img src="./img/hlbt_01.jpg" alt=""></i>
+                                </div>
+                                <div class="swiper-slide">
+                                    <h3 class="content_txt02">哈利·波特与魔法石</h3>
+                                    <p class="content_txt03">哈利波特来了</p>
+                                    <i class="content_txt04"><img src="./img/hlbt_01.jpg" alt=""></i>
+                                </div>
+                            </div>
+                            <!-- Add Pagination -->
+                            <div class="swiper-pagination swiper_pagination"></div>
+                            <!-- Add Arrows -->
+                            <div class="swiper-button-next icon-angle-right button_next"></div>
+                            <div class="swiper-button-prev icon-angle-left button_prev"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="content_txt01">图书</span>
+                        <div class="swiper-container content_swiper_container">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <h3 class="content_txt02">哈利·波特与魔法石</h3>
+                                    <p class="content_txt03">哈利波特来了</p>
+                                    <i class="content_txt04"><img src="./img/hlbt_01.jpg" alt=""></i>
+                                </div>
+                                <div class="swiper-slide">
+                                    <h3 class="content_txt02">哈利·波特与魔法石</h3>
+                                    <p class="content_txt03">哈利波特来了</p>
+                                    <i class="content_txt04"><img src="./img/hlbt_01.jpg" alt=""></i>
+                                </div>
+                                <div class="swiper-slide">
+                                    <h3 class="content_txt02">哈利·波特与魔法石</h3>
+                                    <p class="content_txt03">哈利波特来了</p>
+                                    <i class="content_txt04"><img src="./img/hlbt_01.jpg" alt=""></i>
+                                </div>
+                                <div class="swiper-slide">
+                                    <h3 class="content_txt02">哈利·波特与魔法石</h3>
+                                    <p class="content_txt03">哈利波特来了</p>
+                                    <i class="content_txt04"><img src="./img/hlbt_01.jpg" alt=""></i>
+                                </div>
+                            </div>
+                            <!-- Add Pagination -->
+                            <div class="swiper-pagination swiper_pagination"></div>
+                            <!-- Add Arrows -->
+                            <div class="swiper-button-next icon-angle-right button_next"></div>
+                            <div class="swiper-button-prev icon-angle-left button_prev"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="content_txt01">图书</span>
+                        <div class="swiper-container content_swiper_container">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <h3 class="content_txt02">哈利·波特与魔法石</h3>
+                                    <p class="content_txt03">哈利波特来了</p>
+                                    <i class="content_txt04"><img src="./img/hlbt_01.jpg" alt=""></i>
+                                </div>
+                                <div class="swiper-slide">
+                                    <h3 class="content_txt02">哈利·波特与魔法石</h3>
+                                    <p class="content_txt03">哈利波特来了</p>
+                                    <i class="content_txt04"><img src="./img/hlbt_01.jpg" alt=""></i>
+                                </div>
+                                <div class="swiper-slide">
+                                    <h3 class="content_txt02">哈利·波特与魔法石</h3>
+                                    <p class="content_txt03">哈利波特来了</p>
+                                    <i class="content_txt04"><img src="./img/hlbt_01.jpg" alt=""></i>
+                                </div>
+                                <div class="swiper-slide">
+                                    <h3 class="content_txt02">哈利·波特与魔法石</h3>
+                                    <p class="content_txt03">哈利波特来了</p>
+                                    <i class="content_txt04"><img src="./img/hlbt_01.jpg" alt=""></i>
+                                </div>
+                            </div>
+                            <!-- Add Pagination -->
+                            <div class="swiper-pagination swiper_pagination"></div>
+                            <!-- Add Arrows -->
+                            <div class="swiper-button-next icon-angle-right button_next"></div>
+                            <div class="swiper-button-prev icon-angle-left button_prev"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="content_txt01">图书</span>
+                        <div class="swiper-container content_swiper_container">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <h3 class="content_txt02">哈利·波特与魔法石</h3>
+                                    <p class="content_txt03">哈利波特来了</p>
+                                    <i class="content_txt04"><img src="./img/hlbt_01.jpg" alt=""></i>
+                                </div>
+                                <div class="swiper-slide">
+                                    <h3 class="content_txt02">哈利·波特与魔法石</h3>
+                                    <p class="content_txt03">哈利波特来了</p>
+                                    <i class="content_txt04"><img src="./img/hlbt_01.jpg" alt=""></i>
+                                </div>
+                                <div class="swiper-slide">
+                                    <h3 class="content_txt02">哈利·波特与魔法石</h3>
+                                    <p class="content_txt03">哈利波特来了</p>
+                                    <i class="content_txt04"><img src="./img/hlbt_01.jpg" alt=""></i>
+                                </div>
+                                <div class="swiper-slide">
+                                    <h3 class="content_txt02">哈利·波特与魔法石</h3>
+                                    <p class="content_txt03">哈利波特来了</p>
+                                    <i class="content_txt04"><img src="./img/hlbt_01.jpg" alt=""></i>
+                                </div>
+                            </div>
+                            <!-- Add Pagination -->
+                            <div class="swiper-pagination swiper_pagination"></div>
+                            <!-- Add Arrows -->
+                            <div class="swiper-button-next icon-angle-right button_next"></div>
+                            <div class="swiper-button-prev icon-angle-left button_prev"></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 内容区域 的结束 -->
+
+        <!-- 视频区域 的开始 -->
+        <div class="video w" id="video">
+            <div class="video_top">
+                <span class="video_txt01">视频</span>
+                <span class="video_txt02">查看全部<i class="icon-circle-arrow-right video_txt03"></i></span>
+
+            </div>
+            <div class="video_content">
+                <ul class="video_list">
+                    <script type="text/html" id="tp22">
+                        {{each items}}
+                        <li>
+                            <i><a href="{{$value.videoUrl}}"><img src="{{$value.imgUrl}}" alt=""><b class="icon-play-circle video_txt04"></b></a></i>
+                            <p>{{$value.videotitle}}</p>
+                            <span>{{$value.desc}}</span>
+                        </li>
+                        {{/each}}
+                    </script>
+                </ul>
+            </div>
+        </div>
+        <!-- 视频区域 的结束 -->
+    </div>
+    <!-- 主体容器 的结束 -->
+
+    <!-- 底部区域 的开始 -->
+    <div class="footer" id="footer">
+        <div class="footer_top w">
+            <ul>
+                <li><i class="icon-legal">&nbsp;&nbsp;</i>1小时快修服务</li>
+                <li><i class="icon-time">&nbsp;&nbsp;</i>7天无条件退货</li>
+                <li><i class="icon-time">&nbsp;&nbsp;</i>15天免费换货</li>
+                <li><i class="icon-gift">&nbsp;&nbsp;</i>满150包邮</li>
+                <!-- <li><span class="line_01"></span></li> -->
+                <li><i class="icon-map-marker">&nbsp;&nbsp;</i>520余家售后网点</li>
+            </ul>
+        </div>
+        <div class="footer_center w">
+            <ul>
+                <li>
+                    <ul>
+                        <li>帮助中心</li>
+                        <li><a href="#">账号管理</a></li>
+                        <li><a href="#">购物指南</a></li>
+                        <li><a href="#">订单操作</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <ul>
+                        <li>服务支持</li>
+                        <li><a href="#">售后政策</a></li>
+                        <li><a href="#">自助服务</a></li>
+                        <li><a href="#">相关下载</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <ul>
+                        <li>线下门店</li>
+                        <li><a href="#">小米之家</a></li>
+                        <li><a href="#">服务网点</a></li>
+                        <li><a href="#">零售网点</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <ul>
+                        <li>关于小米</li>
+                        <li><a href="#">了解小米</a></li>
+                        <li><a href="#">加入小米</a></li>
+                        <li><a href="#">联系我们</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <ul>
+                        <li>关注我们</li>
+                        <li><a href="#">新浪微博</a></li>
+                        <li><a href="#">小米部落</a></li>
+                        <li><a href="#">官方微信</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <ul>
+                        <li>特色服务</li>
+                        <li><a href="#">F码通道</a></li>
+                        <li><a href="#">小米移动</a></li>
+                        <li><a href="#">防伪查询</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <ul>
+                        <li><span class="f_c_txt01">400-100-5678</span></li>
+                        <li><span class="f_c_txt02">周一至周日: &nbsp;8:00-18:00</span></li>
+                        <li><span class="f_c_txt03">(仅收市话费)</span></li>
+                        <li><a href="#" class="f_c_txt04">24小时在线客服</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="footer_bottom w">
+            <div class="f_b_top">
+                <div class="logo_bottom"></div>
+                <div class="alliance">
+                    <ul>
+                        <li><a href="#">小米商城店</a></li>
+                        <li>|</li>
+                        <li><a href="#">MIUI</a></li>
+                        <li>|</li>
+                        <li><a href="#">米聊</a></li>
+                        <li>|</li>
+                        <li><a href="#">多看书城</a></li>
+                        <li>|</li>
+                        <li><a href="#">小米路由器</a></li>
+                        <li>|</li>
+                        <li><a href="#">视频电话</a></li>
+                        <li>|</li>
+                        <li><a href="#">小米后院</a></li>
+                        <li>|</li>
+                        <li><a href="#">小米天猫</a></li>
+                        <li>|</li>
+                        <li><a href="#">小米淘宝直营店</a></li>
+                        <li>|</li>
+                        <li><a href="#">小米网盟</a></li>
+                        <li>|</li>
+                        <li><a href="#">问题反馈</a></li>
+                        <li>|</li>
+                        <li><a href="#">Select Region</a></li>
+                    </ul>
+                    <p>©mi.com 京ICP证110507号 京ICP备10046444号 <a href="#">京公网安备11010802020134号</a> <a href="#">京网文[2014]0059-0009号</a></p>
+                    <p>违法和不良信息举报电话：185-0130-1238，本网站所列数据，除特殊说明，所有数据均出自我司实验室测试 </p>
+                    <ul class="icon_list">
+                        <li><img src="./img/seal01.png" alt=""></li>
+                        <li><img src="./img/v-logo-1.png" alt=""></li>
+                        <li><img src="./img/v-logo-2.png" alt=""></li>
+                        <li><img src="./img/v-logo-3.png" alt=""></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="f_b_bottom">
+                探索黑科技,小米为发烧而生!
+            </div>
+        </div>
+    </div>
+    <!-- 底部区域 的结束 -->
+</body>
+<script src="./js/jquery-1.12.4.min.js "></script>
+<script src="./js/template-web.js "></script>
+<script src="./js/swiper.min.js"></script>
+<script src="./js/index.js"></script>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: '.swiper-pagination',
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        spaceBetween: 30
+    });
+
+</script>
+
+</html>
